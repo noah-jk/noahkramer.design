@@ -15,10 +15,10 @@
 
 (function () {
   var phrases = [
-    "Higher Ed Conversions",
+    "Complicated Websites",
     "Accessibility",
-    "Creative Design",
-    "Brand"
+    "AI Tools",
+    "Digital Brand"
   ];
   var el = document.querySelector(".rotate-text");
   if (!el) return;
