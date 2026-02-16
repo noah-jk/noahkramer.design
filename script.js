@@ -12,3 +12,19 @@
   updateClock();
   setInterval(updateClock, 1000);
 })();
+
+(function () {
+  var phrases = [
+    "Higher Ed Conversions",
+    "Accessibility",
+    "Creative Design",
+    "Brand"
+  ];
+  var el = document.querySelector(".rotate-text");
+  if (!el) return;
+  var i = 0;
+  setInterval(function () {
+    i = (i + 1) % phrases.length;
+    el.textContent = phrases[i];
+  }, 3000);
+})();
