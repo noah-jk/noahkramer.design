@@ -21,22 +21,24 @@
     /* Override Figma fixed pixel widths */
     [data-name="Header"],
     [data-name="Footer"] {
-      width: 100% !important;
-      justify-content: space-between !important;
-      gap: 0 !important;
+      width: 100%;
+      justify-content: space-between;
+      gap: 0;
     }
-    [data-name="Main"] { flex: 1 1 0% !important; min-height: 0 !important; overflow: hidden !important; align-items: stretch !important; }
-    [data-name="Section"]:first-child { flex: 0 0 35% !important; width: 35% !important; min-width: 0; overflow-y: auto; overflow-x: hidden; }
-    [data-name="Section"]:last-child  { flex: 1 1 0% !important; width: 65% !important; min-width: 0; overflow-y: auto; overflow-x: hidden; }
+    [data-name="Main"] { flex: 1 1 0%; min-height: 0; overflow: hidden; align-items: stretch; }
+    [data-name="Section"]:first-child { flex: 0 0 35%; width: 35%; height: auto; min-width: 0; overflow-y: auto; overflow-x: hidden; }
+    [data-name="Section"]:last-child  { flex: 1 1 0%; width: 65%; height: auto; min-width: 0; overflow-y: auto; overflow-x: hidden; }
     /* Remove Figma fixed inner widths so content fits within panels */
     [class*="w-[671px]"]  { width: 100% !important; }
     [class*="w-[575px]"]  { width: 100% !important; }
     /* No horizontal scroll inside panels */
-    [data-name="Section"] > div { overflow-x: hidden !important; overflow-y: auto !important; }
+    [data-name="Section"] > div { overflow-x: hidden; overflow-y: auto; }
     @media (max-width: 1000px) {
-      [data-name="Main"] { flex-direction: column !important; overflow-y: auto !important; }
+      [data-name="Main"] { flex-direction: column; overflow-y: auto; align-items: stretch; }
       [data-name="Section"]:first-child,
-      [data-name="Section"]:last-child { width: 100% !important; height: auto !important; overflow-y: visible !important; }
+      [data-name="Section"]:last-child { flex: 0 0 auto; width: 100%; height: auto; overflow-y: visible; }
+      [data-name="Section"] > div { overflow-y: visible; }
+      .min-h-px { min-height: 0; flex:none; }
     }
   </style>
 </head>
