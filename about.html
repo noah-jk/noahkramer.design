@@ -25,14 +25,19 @@
       justify-content: space-between !important;
       gap: 0 !important;
     }
-    [data-name="Section"]:first-child { width: 35% !important; height: 100% !important; min-width: 0; overflow-y: auto; overflow-x: hidden; }
-    [data-name="Section"]:last-child  { width: 65% !important; height: 100% !important; flex: 1 1 0% !important; overflow-y: auto; overflow-x: hidden; }
-    [data-name="Main"] { flex: 1 1 0% !important; min-height: 0 !important; overflow: hidden !important; }
+    [data-name="Main"] { flex: 1 1 0% !important; min-height: 0 !important; overflow: hidden !important; align-items: stretch !important; }
+    [data-name="Section"]:first-child { flex: 0 0 35% !important; width: 35% !important; min-width: 0; overflow-y: auto; overflow-x: hidden; }
+    [data-name="Section"]:last-child  { flex: 1 1 0% !important; width: 65% !important; min-width: 0; overflow-y: auto; overflow-x: hidden; }
     /* Remove Figma fixed inner widths so content fits within panels */
     [class*="w-[671px]"]  { width: 100% !important; }
     [class*="w-[575px]"]  { width: 100% !important; }
     /* No horizontal scroll inside panels */
     [data-name="Section"] > div { overflow-x: hidden !important; overflow-y: auto !important; }
+    @media (max-width: 1000px) {
+      [data-name="Main"] { flex-direction: column !important; overflow-y: auto !important; }
+      [data-name="Section"]:first-child,
+      [data-name="Section"]:last-child { width: 100% !important; height: auto !important; overflow-y: visible !important; }
+    }
   </style>
 </head>
 <body>
@@ -92,7 +97,7 @@
     <!-- ═══════════════════════════════════════ END HEADER ═══════════════════════════════════ -->
 
     <!-- ═══════════════════════════════════════ MAIN ═════════════════════════════════════════ -->
-    <div class="content-stretch flex items-start overflow-clip relative shrink-0 w-full" data-name="Main">
+    <div class="content-stretch flex items-start relative w-full" data-name="Main">
 
       <!-- LEFT PANEL -->
       <div class="bg-[#0a0a0c] h-full relative shrink-0" data-name="Section">

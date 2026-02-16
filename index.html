@@ -25,9 +25,9 @@
       justify-content: space-between !important;
       gap: 0 !important;
     }
-    [data-name="Section"]:first-child { width: 35% !important; height: 100% !important; min-width: 0; overflow-y: auto; overflow-x: hidden; }
-    [data-name="Section"]:last-child  { width: 65% !important; height: 100% !important; flex: 1 1 0% !important; overflow-y: auto; overflow-x: hidden; }
-    [data-name="Main"] { flex: 1 1 0% !important; min-height: 0 !important; overflow: hidden !important; }
+    [data-name="Main"] { flex: 1 1 0% !important; min-height: 0 !important; overflow: hidden !important; align-items: stretch !important; }
+    [data-name="Section"]:first-child { flex: 0 0 35% !important; width: 35% !important; min-width: 0; overflow-y: auto; overflow-x: hidden; }
+    [data-name="Section"]:last-child  { flex: 1 1 0% !important; width: 65% !important; min-width: 0; overflow-y: auto; overflow-x: hidden; }
     /* Remove Figma fixed inner widths so content fits within panels */
     [class*="w-[671px]"]    { width: 100% !important; }
     [class*="w-[575px]"]    { width: 100% !important; }
@@ -40,6 +40,11 @@
     [class*="w-[166.86px]"] { width: 14% !important; min-width: 0 !important; }
     /* No horizontal scroll inside panels */
     [data-name="Section"] > div { overflow-x: hidden !important; overflow-y: auto !important; }
+    @media (max-width: 1000px) {
+      [data-name="Main"] { flex-direction: column !important; overflow-y: auto !important; }
+      [data-name="Section"]:first-child,
+      [data-name="Section"]:last-child { width: 100% !important; height: auto !important; overflow-y: visible !important; }
+    }
     /* Radial purple gradient from Figma design */
     [data-name="Main"] {
       background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20viewBox%3D'0%200%201920%201104'%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20preserveAspectRatio%3D'none'%3E%3Crect%20x%3D'0'%20y%3D'0'%20height%3D'100%25'%20width%3D'100%25'%20fill%3D'url(%23grad)'%20opacity%3D'1'%2F%3E%3Cdefs%3E%3CradialGradient%20id%3D'grad'%20gradientUnits%3D'userSpaceOnUse'%20cx%3D'0'%20cy%3D'0'%20r%3D'10'%20gradientTransform%3D'matrix(36.225%2039.2%20-68.174%2063%201558.2%20760.5)'%3E%3Cstop%20stop-color%3D'rgba(138%2C18%2C245%2C0)'%20offset%3D'0'%2F%3E%3Cstop%20stop-color%3D'rgba(138%2C18%2C245%2C1)'%20offset%3D'1'%2F%3E%3C%2FradialGradient%3E%3C%2Fdefs%3E%3C%2Fsvg%3E");
@@ -103,7 +108,7 @@
     <!-- ═══════════════════════════════════════ END HEADER ═══════════════════════════════════ -->
 
     <!-- ═══════════════════════════════════════ MAIN ═════════════════════════════════════════ -->
-    <div class="content-stretch flex items-start overflow-clip relative shrink-0 w-full" data-name="Main">
+    <div class="content-stretch flex items-start relative w-full" data-name="Main">
 
       <!-- LEFT PANEL -->
       <div class="bg-[#0a0a0c] h-full relative shrink-0" data-name="Section">
@@ -148,7 +153,7 @@
                   </div>
                 </div>
                 <!-- Subtitle -->
-                <div class="content-stretch flex flex-col items-start max-w-[384px] pt-[10.5px] relative shrink-0 w-[384px]" data-name="Container">
+                <div class="content-stretch flex flex-col items-start max-w-[384px] pt-[10.5px] relative shrink-0" data-name="Container">
                   <div class="flex flex-col font-['IBM_Plex_Mono:Regular',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#889] text-[16px] w-full">
                     <p class="leading-[22.75px] whitespace-pre-wrap">For over 10 years I've designed enterprise experiences that connect humans over the internet.</p>
                   </div>
