@@ -17,10 +17,10 @@
 
 (function () {
   const phrases = [
-    "Complicated Websites",
-    "Accessibility",
+    "Complex Websites",
+    "A11y",
     "AI Tools",
-    "Digital Brand"
+    "Digital Branding"
   ];
   const el = document.querySelector(".rotate-text");
   if (!el) return;
