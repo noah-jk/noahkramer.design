@@ -44,6 +44,16 @@ a { text-decoration: none; color: inherit; }
                      linear-gradient(90deg, #fff 0%, #fff 100%);
 }
 
+/* Custom scrollbar — grey on dark background */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #26262d #0a0a0c;
+}
+*::-webkit-scrollbar { width: 6px; height: 6px; }
+*::-webkit-scrollbar-track { background: #0a0a0c; }
+*::-webkit-scrollbar-thumb { background: #26262d; border-radius: 3px; }
+*::-webkit-scrollbar-thumb:hover { background: #3a3a44; }
+
 /* No horizontal scroll inside panels */
 [data-name="Section"] > div { overflow-x: hidden; overflow-y: auto; }
 
