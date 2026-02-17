@@ -30,3 +30,34 @@
     el.textContent = phrases[i];
   }, 3000);
 })();
+
+(function () {
+  const preview = document.getElementById("hover-preview");
+  if (!preview) return;
+  const rows = document.querySelectorAll("[data-hover-img]");
+  const offset = 20;
+
+  rows.forEach(function (row) {
+    row.addEventListener("mouseenter", function () {
+      preview.src = row.dataset.hoverImg;
+      preview.classList.add("visible");
+    });
+
+    row.addEventListener("mousemove", function (e) {
+      const imgW = 320;
+      const imgH = preview.offsetHeight || 200;
+      let x = e.clientX + offset;
+      let y = e.clientY + offset;
+
+      if (x + imgW > window.innerWidth) x = e.clientX - imgW - offset;
+      if (y + imgH > window.innerHeight) y = e.clientY - imgH - offset;
+
+      preview.style.left = x + "px";
+      preview.style.top = y + "px";
+    });
+
+    row.addEventListener("mouseleave", function () {
+      preview.classList.remove("visible");
+    });
+  });
+})();
