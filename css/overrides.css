@@ -54,6 +54,11 @@ a { text-decoration: none; color: inherit; }
 *::-webkit-scrollbar-thumb { background: #26262d; border-radius: 3px; }
 *::-webkit-scrollbar-thumb:hover { background: #3a3a44; }
 
+/* WCAG AA contrast fixes — override Figma's #888899 (~4.0:1) → #9999aa (~5.2:1) */
+[class*="text-\[#889\]"] { color: #9999aa !important; }
+/* Override purple IDs #8a12f5 (~2.5:1) → #a64dff (~4.7:1) */
+[class*="text-\[#8a12f5\]"] { color: #a64dff !important; }
+
 /* No horizontal scroll inside panels */
 [data-name="Section"] > div { overflow-x: hidden; overflow-y: auto; }
 
