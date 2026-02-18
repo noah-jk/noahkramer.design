@@ -20,9 +20,11 @@
   <link rel="stylesheet" href="css/overrides.css" />
   <style>
     /* Page-specific: about.html */
+    /* Remove Figma fixed heights — let justify-between handle spacing */
+    .h-\[458\.5px\] { height: auto; }
+    .h-\[458\.5px\] > .absolute { position: relative; }
+    .pt-\[445\.5px\] { padding-top: 0; }
     @media (max-width: 1000px) {
-      .h-\[458\.5px\] { height: auto; }
-      .h-\[458\.5px\] > .absolute { position: relative; }
       .pt-\[445\.5px\] { padding-top: 24px; }
     }
   </style>
