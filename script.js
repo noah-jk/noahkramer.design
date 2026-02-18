@@ -32,6 +32,45 @@
 })();
 
 (function () {
+  const els = document.querySelectorAll("[data-typewriter]");
+  if (!els.length) return;
+  const speed = 45;
+  let queue = 0;
+
+  function typeIn(el) {
+    const text = el.getAttribute("data-typewriter-text");
+    el.textContent = "";
+    el.classList.add("typing");
+    let i = 0;
+    var interval = setInterval(function () {
+      i++;
+      el.textContent = text.substring(0, i);
+      if (i >= text.length) {
+        clearInterval(interval);
+        el.classList.remove("typing");
+        el.classList.add("typed");
+      }
+    }, speed);
+  }
+
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      observer.unobserve(entry.target);
+      var delay = queue * 200;
+      queue++;
+      setTimeout(function () { typeIn(entry.target); }, delay);
+    });
+  }, { threshold: 0.1 });
+
+  els.forEach(function (el) {
+    el.setAttribute("data-typewriter-text", el.textContent);
+    el.textContent = "";
+    observer.observe(el);
+  });
+})();
+
+(function () {
   const preview = document.getElementById("hover-preview");
   if (!preview) return;
   const rows = document.querySelectorAll("[data-hover-img]");

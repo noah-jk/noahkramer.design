@@ -59,6 +59,22 @@ a { text-decoration: none; color: inherit; }
 /* Override purple IDs #8a12f5 (~2.5:1) → #a64dff (~4.7:1) */
 [class*="text-\[#8a12f5\]"] { color: #a64dff !important; }
 
+/* Typewriter entrance animation */
+[data-typewriter] {
+  visibility: hidden;
+}
+[data-typewriter].typing,
+[data-typewriter].typed {
+  visibility: visible;
+}
+[data-typewriter].typing::after {
+  content: "▌";
+  animation: blink-cursor 0.6s step-end infinite;
+}
+@keyframes blink-cursor {
+  50% { opacity: 0; }
+}
+
 /* No horizontal scroll inside panels */
 [data-name="Section"] > div { overflow-x: hidden; overflow-y: auto; }
 
