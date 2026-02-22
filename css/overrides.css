@@ -79,6 +79,68 @@ a { text-decoration: none; color: inherit; }
 /* No horizontal scroll inside panels */
 [data-name="Section"] > div { overflow-x: hidden; overflow-y: auto; }
 
+/* ── Case study design tokens ────────────────────────────────────────────── */
+:root {
+  --cs-border: 1px solid #26262d;
+  --cs-text:   #e2e2e2;
+  --cs-muted:  #9999aa;
+  --cs-accent: #39ff14;
+  --cs-mono:   'Space Mono', monospace;
+  --cs-plex:   'IBM Plex Mono', monospace;
+}
+
+/* Stats row */
+.cs-stats               { display: flex; width: 100%; border-bottom: var(--cs-border); }
+.cs-stat                { flex: 1; padding: 32px 32px 28px; border-right: var(--cs-border); }
+.cs-stat:last-child     { border-right: none; }
+.cs-stat__value         { font-family: var(--cs-mono); font-weight: 700; font-size: 48px; letter-spacing: -2px; line-height: 1; color: var(--cs-text); }
+.cs-stat__value--accent { color: var(--cs-accent); }
+.cs-stat__label         { font-family: var(--cs-mono); font-weight: 400; font-size: 11px; color: var(--cs-muted); letter-spacing: 1.5px; text-transform: uppercase; margin-top: 10px; }
+
+/* Section containers */
+.cs-hero     { padding: 96px 48px 112px; border-bottom: var(--cs-border); }
+.cs-problems { padding: 64px 48px 72px; }
+.cs-section  { padding: 64px 48px 72px; border-top: var(--cs-border); }
+
+/* Typography */
+.cs-statement     { font-family: var(--cs-mono); font-weight: 700; font-size: 32px; color: var(--cs-text); letter-spacing: -1px; line-height: 1.25; margin: 0; }
+.cs-tag           { font-family: var(--cs-mono); font-weight: 700; font-size: 11px; color: var(--cs-accent); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 32px; }
+.cs-heading       { font-family: var(--cs-mono); font-weight: 700; font-size: 40px; color: var(--cs-text); letter-spacing: -1.5px; line-height: 1.1; margin: 0 0 24px; }
+.cs-label         { font-family: var(--cs-mono); font-weight: 400; font-size: 11px; color: var(--cs-muted); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 40px; }
+.cs-body          { font-family: var(--cs-plex); font-weight: 400; font-size: 15px; color: var(--cs-muted); line-height: 1.7; margin: 0 0 32px; max-width: 560px; }
+.cs-callout       { font-family: var(--cs-mono); font-weight: 700; font-size: 14px; color: var(--cs-text); letter-spacing: 0.5px; }
+.cs-callout--wide { max-width: 560px; }
+
+/* Problem list */
+.cs-problem-list            { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+.cs-problem-item            { display: flex; align-items: baseline; gap: 24px; padding: 24px 0; border-bottom: var(--cs-border); }
+.cs-problem-item:last-child { border-bottom: none; }
+.cs-problem-num             { font-family: var(--cs-mono); font-weight: 700; font-size: 11px; color: var(--cs-muted); letter-spacing: 1.5px; min-width: 24px; }
+.cs-problem-text            { font-family: var(--cs-mono); font-weight: 700; font-size: 32px; color: var(--cs-text); letter-spacing: -1px; line-height: 1.2; }
+
+/* Detail list (inside solutions) */
+.cs-detail-list              { list-style: none; margin: 0 0 32px; padding: 0; max-width: 560px; display: flex; flex-direction: column; }
+.cs-detail-item              { display: flex; align-items: baseline; gap: 20px; padding: 20px 0; border-top: var(--cs-border); }
+.cs-detail-item:last-child   { border-bottom: var(--cs-border); }
+.cs-detail-num               { font-family: var(--cs-mono); font-weight: 700; font-size: 11px; color: var(--cs-muted); letter-spacing: 1.5px; min-width: 20px; flex-shrink: 0; }
+.cs-detail-text              { font-family: var(--cs-plex); font-weight: 400; font-size: 15px; color: var(--cs-muted); line-height: 1.6; }
+
+/* Images */
+.cs-img              { display: block; width: 100%; margin-top: 48px; border: var(--cs-border); object-fit: cover; object-position: top; }
+.cs-img--constrained { max-width: 560px; }
+.cs-img-pair         { display: flex; gap: 8px; margin-top: 48px; }
+.cs-img-pair img     { display: block; width: calc(50% - 4px); height: 280px; object-fit: cover; object-position: top; border: var(--cs-border); }
+.cs-gallery          { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.cs-gallery img      { display: block; width: 100%; height: 240px; object-fit: cover; object-position: top; border: var(--cs-border); }
+
+/* Utility */
+.pb-skills { padding-bottom: 20px; }
+
+/* Typewriter grid overlay — stacks spans in the same cell so the h1 sizes to the longest word */
+.tw-grid          { display: grid; }
+.tw-grid > *      { grid-area: 1 / 1; }
+.tw-grid__measure { visibility: hidden; }
+
 /* Shared mobile breakpoint */
 @media (max-width: 1000px) {
   /* Use body as scroll container — required for reliable Android touch scroll */
