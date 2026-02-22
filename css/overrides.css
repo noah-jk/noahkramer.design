@@ -155,4 +155,6 @@ a { text-decoration: none; color: inherit; }
   [data-name="HorizontalBorder+OverlayBlur"] .justify-center { justify-content: flex-start; }
   /* Reduce left panel outer padding */
   [data-name="Section"]:first-child .p-\[48px\] { padding: 16px; }
+  /* Collapse the 445px spacer that pushes Connect to the bottom on desktop */
+  .pt-\[445\.5px\] { padding-top: 32px; }
 }

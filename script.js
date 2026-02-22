@@ -100,3 +100,25 @@
     });
   });
 })();
+
+(function () {
+  // iOS Safari autoplay fallback: programmatically call play() after page load.
+  // muted + playsinline should be sufficient, but some iOS versions need an
+  // explicit play() call to start the video after the document is interactive.
+  var v = document.querySelector("video[autoplay]");
+  if (!v) return;
+  var attempt = function () {
+    var p = v.play();
+    if (p !== undefined) {
+      p.catch(function () {
+        // If autoplay is blocked (e.g. Low Power Mode), retry once on first touch.
+        document.addEventListener("touchstart", function () { v.play(); }, { once: true });
+      });
+    }
+  };
+  if (document.readyState === "complete") {
+    attempt();
+  } else {
+    window.addEventListener("load", attempt);
+  }
+})();
