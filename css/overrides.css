@@ -148,8 +148,10 @@ a { text-decoration: none; color: inherit; }
   [data-name$=".html"] { height: auto; min-height: 100vh; }
   [data-name="Main"] { flex-direction: column; overflow: visible; align-items: stretch; }
   [data-name="Section"]:first-child,
-  [data-name="Section"]:last-child { flex: 0 0 auto; width: 100%; height: auto; overflow-y: visible; }
-  [data-name="Section"] > div { overflow-y: visible; }
+  [data-name="Section"]:last-child { flex: 0 0 auto; width: 100%; height: auto; overflow: visible; }
+  /* overflow: visible (both axes) prevents these divs from being scroll containers.
+     overflow-y: visible alone is ignored by browsers when overflow-x is auto (spec quirk). */
+  [data-name="Section"] > div { overflow: visible; }
   .min-h-px { min-height: 0; flex: none; }
   /* Left-align Connect section */
   [data-name="HorizontalBorder+OverlayBlur"] .justify-center { justify-content: flex-start; }
