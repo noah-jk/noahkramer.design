@@ -34,7 +34,7 @@
 (function () {
   const els = document.querySelectorAll("[data-typewriter]");
   if (!els.length) return;
-  const speed = 45;
+  const speed = 35;
   let queue = 0;
 
   function typeIn(el) {
