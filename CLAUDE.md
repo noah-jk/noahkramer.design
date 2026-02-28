@@ -97,6 +97,25 @@ Four self-contained IIFEs — no dependencies:
 
 ---
 
+## Google Analytics
+
+Every page must include the GA4 tag immediately after `<meta charset="UTF-8" />`. The measurement ID is already filled in on all existing pages — copy the block from any existing page:
+
+```html
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'GA_MEASUREMENT_ID');
+</script>
+```
+
+Replace `GA_MEASUREMENT_ID` with the actual tag ID from an existing page.
+
+---
+
 ## Conventions
 
 - No inline `style=` attributes on content elements — use classes in `overrides.css`
