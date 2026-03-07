@@ -134,6 +134,49 @@ a { text-decoration: none; color: inherit; }
 .cs-gallery          { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
 .cs-gallery img      { display: block; width: 100%; height: 240px; object-fit: cover; object-position: top; border: var(--cs-border); }
 
+/* Cold open — single oversized letter (bienvenidos.html) */
+.cs-cold-open {
+  font-family: var(--cs-mono);
+  font-weight: 700;
+  font-size: clamp(180px, 28vw, 480px);
+  color: var(--cs-accent);
+  line-height: 0.85;
+  display: block;
+  margin: 0 0 40px;
+}
+.cs-cold-open__sub {
+  font-family: var(--cs-plex);
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--cs-muted);
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+/* Terminal block */
+.cs-terminal {
+  background: #070709;
+  border: var(--cs-border);
+  padding: 28px 32px;
+  margin-bottom: 48px;
+  max-width: 640px;
+}
+.cs-terminal__line {
+  display: block;
+  font-family: var(--cs-mono);
+  font-weight: 400;
+  font-size: 13px;
+  color: var(--cs-accent);
+  line-height: 2.2;
+}
+.cs-terminal__line--muted {
+  color: var(--cs-muted);
+}
+.cs-terminal__line:last-child::after {
+  content: '▌';
+  animation: blink-cursor 0.6s step-end infinite;
+}
+
 /* Utility */
 .pb-skills { padding-bottom: 20px; }
 
