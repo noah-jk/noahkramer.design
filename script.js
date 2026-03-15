@@ -17,7 +17,7 @@
 
 (function () {
   const phrases = [
-    "Complex Websites",
+    "Web",
     "A11y",
     "AI Tools",
     "Digital Branding"
