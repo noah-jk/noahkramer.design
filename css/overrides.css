@@ -81,6 +81,7 @@ a { text-decoration: none; color: inherit; }
 
 /* ── Case study design tokens ────────────────────────────────────────────── */
 :root {
+  --font-sans: 'Sora', ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --cs-border: 1px solid #26262d;
   --cs-text:   #e2e2e2;
   --cs-muted:  #9999aa;
