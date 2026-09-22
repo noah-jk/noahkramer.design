@@ -113,6 +113,9 @@ a { text-decoration: none; color: inherit; }
 .cs-callout       { font-family: var(--cs-mono); font-weight: 700; font-size: 14px; color: var(--cs-text); letter-spacing: 0.5px; }
 .cs-callout--wide { max-width: 560px; }
 
+/* Row tag (project list badges) */
+.row-tag { font-family: var(--cs-mono); font-weight: 700; font-size: 10px; color: var(--cs-accent); letter-spacing: 1.5px; text-transform: uppercase; white-space: nowrap; }
+
 /* Problem list */
 .cs-problem-list            { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
 .cs-problem-item            { display: flex; align-items: baseline; gap: 24px; padding: 24px 0; border-bottom: var(--cs-border); }
