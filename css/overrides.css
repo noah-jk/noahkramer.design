@@ -184,6 +184,10 @@ a { text-decoration: none; color: inherit; }
 /* Utility */
 .pb-skills { padding-bottom: 20px; }
 
+/* Bio prose paragraphs — small gap between consecutive <p>, no trailing gap */
+.bio-text { margin: 0 0 12px; }
+.bio-text:last-child { margin-bottom: 0; }
+
 /* Homepage movie label — rotated vertical tag anchored to bottom-left corner */
 .movie-label {
   position: absolute;
