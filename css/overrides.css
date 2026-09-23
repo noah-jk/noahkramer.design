@@ -207,4 +207,8 @@ a { text-decoration: none; color: inherit; }
   [data-name="Section"]:first-child .p-\[48px\] { padding: 16px; }
   /* Collapse the 445px spacer that pushes Connect to the bottom on desktop */
   .pt-\[445\.5px\] { padding-top: 32px; }
+  /* Stack stat blocks instead of forcing them into an overflowing row */
+  .cs-stats { flex-direction: column; }
+  .cs-stat  { border-right: none; border-bottom: var(--cs-border); }
+  .cs-stat:last-child { border-bottom: none; }
 }
