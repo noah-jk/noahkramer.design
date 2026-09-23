@@ -103,6 +103,30 @@
 })();
 
 (function () {
+  const btn = document.querySelector("[data-movie-toggle]");
+  const video = document.querySelector("[data-name='movie-video']");
+  if (!btn || !video) return;
+
+  btn.addEventListener("click", function () {
+    if (video.paused) {
+      video.play();
+    } else {
+      video.pause();
+    }
+  });
+
+  video.addEventListener("play", function () {
+    btn.setAttribute("aria-pressed", "false");
+    btn.setAttribute("aria-label", "Pause video");
+  });
+
+  video.addEventListener("pause", function () {
+    btn.setAttribute("aria-pressed", "true");
+    btn.setAttribute("aria-label", "Play video");
+  });
+})();
+
+(function () {
   // iOS Safari autoplay fallback: programmatically call play() after page load.
   // muted + playsinline should be sufficient, but some iOS versions need an
   // explicit play() call to start the video after the document is interactive.

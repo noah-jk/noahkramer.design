@@ -184,6 +184,40 @@ a { text-decoration: none; color: inherit; }
 /* Utility */
 .pb-skills { padding-bottom: 20px; }
 
+/* Homepage movie label — rotated vertical tag anchored to bottom-left corner */
+.movie-label {
+  position: absolute;
+  bottom: 0;
+  left: 16px;
+  transform: rotate(-90deg);
+  transform-origin: bottom left;
+}
+
+/* Homepage movie play/pause toggle (WCAG 2.2.2) */
+.movie-toggle {
+  position: absolute;
+  bottom: 6px;
+  right: 6px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: none;
+  border-radius: 2px;
+  background: rgba(10, 10, 12, 0.65);
+  color: var(--cs-text);
+  cursor: pointer;
+}
+.movie-toggle:hover      { background: rgba(10, 10, 12, 0.85); color: var(--cs-accent); }
+.movie-toggle:focus-visible { outline: 1px solid var(--cs-accent); outline-offset: 1px; }
+.movie-toggle__pause,
+.movie-toggle__play { display: none; }
+.movie-toggle[aria-pressed="false"] .movie-toggle__pause { display: block; }
+.movie-toggle[aria-pressed="true"]  .movie-toggle__play  { display: block; }
+
 /* Typewriter grid overlay — stacks spans in the same cell so the h1 sizes to the longest word */
 .tw-grid          { display: grid; }
 .tw-grid > *      { grid-area: 1 / 1; }

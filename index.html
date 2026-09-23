@@ -123,9 +123,18 @@
               <!-- Video block -->
               <div class="content-stretch flex flex-col items-start py-[20px] relative shrink-0" data-name="Margin">
                 <div class="content-stretch flex flex-col h-[183px] items-start justify-between overflow-clip relative shrink-0 w-[190px]" data-name="movie">
-                  <video autoplay loop muted playsinline webkit-playsinline width="190" height="183" class="absolute max-w-none object-cover size-full" controlslist="nodownload">
+                  <video autoplay loop muted playsinline webkit-playsinline width="190" height="183" class="absolute max-w-none object-cover size-full" controlslist="nodownload" data-name="movie-video">
                     <source src="assets/IMG_8716.mp4" type="video/mp4" />
                   </video>
+                  <button type="button" class="movie-toggle" data-movie-toggle aria-label="Pause video" aria-pressed="false">
+                    <svg class="movie-toggle__pause" width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">
+                      <rect x="1" y="0.5" width="2.5" height="9" fill="currentColor" />
+                      <rect x="6.5" y="0.5" width="2.5" height="9" fill="currentColor" />
+                    </svg>
+                    <svg class="movie-toggle__play" width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">
+                      <path d="M1 0.5L9 5L1 9.5V0.5Z" fill="currentColor" />
+                    </svg>
+                  </button>
                   <!-- Timecode top-right -->
                   <div class="content-stretch flex flex-col items-end relative shrink-0 w-full">
                     <div class="content-stretch flex items-start px-[8px] py-[1.5px] relative shrink-0" data-name="Border">
@@ -135,7 +144,7 @@
                     </div>
                   </div>
                   <!-- Label bottom-left -->
-                  <div class="content-stretch flex flex-col items-start relative shrink-0 w-full">
+                  <div class="movie-label" data-name="Container">
                     <div class="bg-[#8a12f5] content-stretch flex items-start px-[8px] py-[1.5px] relative shrink-0" data-name="Border">
                       <div class="flex flex-col font-['Space_Mono:Regular',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#e2e2e2] text-[9px] tracking-[2.7px] uppercase whitespace-nowrap">
                         <p class="leading-[13.5px]">Creative Director</p>
