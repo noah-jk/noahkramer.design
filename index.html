@@ -55,10 +55,26 @@
       width: 320px;
       height: auto;
       opacity: 0;
-      transition: opacity 0.2s ease;
+      transition: opacity 0.15s ease;
       border: 1px solid #26262d;
     }
     #hover-preview.visible { opacity: 1; }
+    #hover-preview.glitching { animation: hover-preview-glitch-in 0.45s steps(1) both; }
+    @keyframes hover-preview-glitch-in {
+      0%   { opacity: 0; clip-path: inset(0 0 0 0); transform: translate(0, 0); filter: none; }
+      6%   { opacity: 1; clip-path: inset(8% 0 62% 0);  transform: translate(-10px, 0); filter: drop-shadow(3px 0 0 #ff2b6b) drop-shadow(-3px 0 0 #2bd2ff); }
+      13%  { opacity: 0; clip-path: inset(0 0 0 0); transform: translate(0, 0); filter: none; }
+      20%  { opacity: 1; clip-path: inset(45% 0 15% 0); transform: translate(8px, 0); filter: drop-shadow(-3px 0 0 #ff2b6b) drop-shadow(3px 0 0 #2bd2ff); }
+      28%  { opacity: 1; clip-path: inset(0 0 70% 0);  transform: translate(-6px, 0); filter: contrast(1.4) drop-shadow(2px 0 0 #ff2b6b) drop-shadow(-2px 0 0 #2bd2ff); }
+      36%  { opacity: 0.25; clip-path: inset(0 0 0 0); transform: translate(0, 0); filter: none; }
+      45%  { opacity: 1; clip-path: inset(25% 0 40% 0); transform: translate(5px, 0); filter: drop-shadow(2px 0 0 #ff2b6b) drop-shadow(-2px 0 0 #2bd2ff); }
+      60%  { opacity: 1; clip-path: inset(0 0 0 0); transform: translate(-3px, 0); filter: contrast(1.2); }
+      75%  { opacity: 1; transform: translate(2px, 0); filter: none; }
+      100% { opacity: 1; transform: translate(0, 0); filter: none; clip-path: inset(0 0 0 0); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      #hover-preview.glitching { animation: none; }
+    }
   </style>
 </head>
 <body>

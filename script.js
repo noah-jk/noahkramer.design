@@ -81,6 +81,9 @@
     row.addEventListener("mouseenter", function () {
       preview.src = row.dataset.hoverImg;
       preview.classList.add("visible");
+      preview.classList.remove("glitching");
+      void preview.offsetWidth;
+      preview.classList.add("glitching");
     });
 
     row.addEventListener("mousemove", function (e) {
@@ -98,6 +101,7 @@
 
     row.addEventListener("mouseleave", function () {
       preview.classList.remove("visible");
+      preview.classList.remove("glitching");
     });
   });
 })();
